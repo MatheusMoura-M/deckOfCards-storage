@@ -15,7 +15,7 @@ const Home = () => {
       flexDir={"column"}
       alignItems={"flex-start"}
       bgImage={fundoVerde}
-      bgSize={"200%"}
+      bgSize={"250%"}
       bgPos={"center center"}
       bgRepeat={"no-repeat"}
       h={"100vh"}

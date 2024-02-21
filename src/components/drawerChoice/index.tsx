@@ -30,7 +30,7 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             display={"flex"}
             flexDir={"column"}
             gap={3}
-            maxH={200}
+            maxH={300}
             overflowY={"auto"}
             px={0}
           >
