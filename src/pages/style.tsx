@@ -4,7 +4,7 @@ export const ContainerHomePage = styled.section`
   height: 250px;
   display: flex;
   margin: 0 auto;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 5px;
   flex-wrap: wrap;

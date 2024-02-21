@@ -1,5 +1,4 @@
 import { extendTheme } from "@chakra-ui/react";
-import fundoVerde from "../assets/fundo_verde.jpg";
 
 const breakpoints = {
   xs: "21.3em", // 340px

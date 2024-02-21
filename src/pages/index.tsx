@@ -7,7 +7,6 @@ import fundoVerde from "../assets/fundo_verde.jpg";
 const Home = () => {
   return (
     <Flex
-      justifyContent={"center"}
       alignItems={"flex-start"}
       bgImage={fundoVerde}
       bgSize={"200%"}
