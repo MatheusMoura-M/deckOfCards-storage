@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import fundoVerde from "../assets/fundo_verde.jpg";
 
 const breakpoints = {
   xs: "21.3em", // 340px
@@ -104,13 +105,13 @@ const custonTheme = extendTheme({
   },
   styles: {
     global: {
-      body: {
-        bg: "#F7F7F7",
-        bgImage: "src/assets/fundo_verde.jpg",
-        bgSize: "200%",
-        bgRepeat: "no-repeat",
-        bgPosition: "center center",
-      },
+      // body: {
+      //   bg: "#F7F7F7",
+      //   bgImage: { fundoVerde },
+      //   bgSize: "200%",
+      //   bgRepeat: "no-repeat",
+      //   bgPosition: "center center",
+      // },
     },
   },
   components: {
