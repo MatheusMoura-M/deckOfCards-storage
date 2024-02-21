@@ -29,8 +29,8 @@ const HandleCards = ({ children, isJoker }: iHandleCards) => {
           <Flex gap={2}>
             <Button
               minW={"14px"}
-              w={"18px"}
-              h={"18px"}
+              w={"30px"}
+              h={"30px"}
               p={0}
               fontSize={17}
               borderRadius={3}
@@ -39,8 +39,8 @@ const HandleCards = ({ children, isJoker }: iHandleCards) => {
             </Button>
             <Button
               minW={"14px"}
-              w={"18px"}
-              h={"18px"}
+              w={"30px"}
+              h={"30px"}
               p={0}
               fontSize={17}
               borderRadius={3}
@@ -60,14 +60,14 @@ const HandleCards = ({ children, isJoker }: iHandleCards) => {
             mr={2.5}
           >
             <Flex alignItems={"center"} gap={"3px"}>
-              <Text fontSize={18}>{symbol}</Text>
+              <Text fontSize={25}>{symbol}</Text>
               {children}
             </Flex>
             <Flex gap={2}>
               <Button
                 minW={"14px"}
-                w={"18px"}
-                h={"18px"}
+                w={"30px"}
+                h={"30px"}
                 p={0}
                 fontSize={17}
                 borderRadius={3}
@@ -76,8 +76,8 @@ const HandleCards = ({ children, isJoker }: iHandleCards) => {
               </Button>
               <Button
                 minW={"14px"}
-                w={"18px"}
-                h={"18px"}
+                w={"30px"}
+                h={"30px"}
                 p={0}
                 fontSize={17}
                 borderRadius={3}

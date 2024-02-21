@@ -6,7 +6,7 @@ interface iImageCard {
 
 const ImageCard = ({ image }: iImageCard) => {
   return (
-    <Flex as="figure" w={78}>
+    <Flex as="figure" w={78} h={110}>
       <Image src={image} />
     </Flex>
   );
