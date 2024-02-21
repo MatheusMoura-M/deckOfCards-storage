@@ -141,3 +141,20 @@ export const espadas = [
 export const coringa = [imagem57];
 
 export const allCards = [...copas, ...ouros, ...paus, ...espadas, ...coringa];
+
+export const allSymbols = [
+  "A",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K",
+];

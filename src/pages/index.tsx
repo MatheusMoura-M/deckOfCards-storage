@@ -1,19 +1,26 @@
-import { Flex } from "@chakra-ui/react";
+import { Button, Flex, useDisclosure } from "@chakra-ui/react";
+import { useRef } from "react";
+import fundoVerde from "../assets/fundo_verde.jpg";
+import DrawerChoice from "../components/drawerChoice";
 import ImageCard from "../components/imageCard";
 import { copas, espadas, ouros, paus } from "../utils";
 import { ContainerHomePage } from "./style";
-import fundoVerde from "../assets/fundo_verde.jpg";
 
 const Home = () => {
+  const { onOpen, isOpen, onClose } = useDisclosure();
+  const btnRef = useRef<HTMLButtonElement>(null);
+
   return (
     <Flex
+      flexDir={"column"}
       alignItems={"flex-start"}
       bgImage={fundoVerde}
       bgSize={"200%"}
       bgPos={"center center"}
       bgRepeat={"no-repeat"}
       h={"100vh"}
-      py={5}
+      gap={10}
+      p={5}
     >
       <ContainerHomePage>
         <Flex
@@ -71,6 +78,11 @@ const Home = () => {
           ))}
         </Flex>
       </ContainerHomePage>
+      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
+        Open
+      </Button>
+
+      <DrawerChoice btnRef={btnRef} isOpen={isOpen} onClose={onClose} />
     </Flex>
   );
 };

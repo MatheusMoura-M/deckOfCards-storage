@@ -1,46 +1,75 @@
 import {
-  Button,
   Drawer,
   DrawerBody,
-  DrawerCloseButton,
   DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
-  Input,
-  useDisclosure,
+  Text,
 } from "@chakra-ui/react";
-import { useRef } from "react";
+import { GiCardJoker } from "react-icons/gi";
+import { ImClubs, ImDiamonds, ImHeart, ImSpades } from "react-icons/im";
+import HandleCards from "../handleCards";
 
-const DrawerChoice = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef<HTMLButtonElement>(null);
+interface iDrawerChoice {
+  btnRef: React.RefObject<HTMLButtonElement>;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
   return (
     <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
-        Open
-      </Button>
       <Drawer
         isOpen={isOpen}
-        placement="right"
+        placement="bottom"
         onClose={onClose}
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
-
-          <DrawerBody>
-            <Input placeholder="Type here..." />
+        <DrawerContent bg={"#658565"}>
+          <DrawerBody
+            display={"flex"}
+            flexDir={"column"}
+            gap={3}
+            maxH={200}
+            overflowY={"auto"}
+            px={0}
+          >
+            {/* Copas */}
+            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+              Copas
+            </Text>
+            <HandleCards>
+              <ImHeart color="red" />
+            </HandleCards>
+            {/* Paus */}
+            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+              Paus
+            </Text>
+            <HandleCards>
+              <ImClubs />
+            </HandleCards>
+            {/* Espadas */}
+            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+              Espadas
+            </Text>
+            <HandleCards>
+              <ImSpades />
+            </HandleCards>
+            {/* Ouros */}
+            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+              Ouros
+            </Text>
+            <HandleCards>
+              <ImDiamonds color="red" />
+            </HandleCards>
+            {/* Coringa */}
+            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+              Coringa
+            </Text>
+            <HandleCards isJoker={true}>
+              <GiCardJoker color="purple" size={22} />
+            </HandleCards>
           </DrawerBody>
-
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button>
-          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
