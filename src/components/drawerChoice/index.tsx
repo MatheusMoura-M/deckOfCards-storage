@@ -15,7 +15,6 @@ import { useRef } from "react";
 const DrawerChoice = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
-
   return (
     <>
       <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
