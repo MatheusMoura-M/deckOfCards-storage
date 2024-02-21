@@ -106,6 +106,10 @@ const custonTheme = extendTheme({
     global: {
       body: {
         bg: "#F7F7F7",
+        bgImage: "src/assets/fundo_verde.jpg",
+        bgSize: "200%",
+        bgRepeat: "no-repeat",
+        bgPosition: "center center",
       },
     },
   },

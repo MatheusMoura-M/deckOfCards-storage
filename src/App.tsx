@@ -1,10 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
+import Home from "./pages";
 import custonTheme from "./styles/theme";
 
 function App() {
   return (
     <ChakraProvider theme={custonTheme}>
-      <h2>Olá rede</h2>
+      <Home />
     </ChakraProvider>
   );
 }
