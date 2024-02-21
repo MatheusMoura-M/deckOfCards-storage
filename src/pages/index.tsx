@@ -19,17 +19,15 @@ const Home = () => {
       bgPos={"center center"}
       bgRepeat={"no-repeat"}
       h={"100vh"}
-      gap={10}
+      gap={7}
       p={5}
     >
       <ContainerHomePage>
         <Flex
           display={"flex"}
-          justifyContent={"center"}
+          justifyContent={"flex-start"}
           alignItems={"center"}
-          overflowY={"auto"}
-          maxH={400}
-          flexWrap={"wrap"}
+          overflowX={"auto"}
         >
           <h2>Copas: </h2>
           {copas.map((image, i) => (
@@ -39,10 +37,9 @@ const Home = () => {
 
         <Flex
           display={"flex"}
-          justifyContent={"center"}
+          justifyContent={"flex-start"}
           alignItems={"center"}
-          maxH={400}
-          flexWrap={"wrap"}
+          overflowX={"auto"}
         >
           <h2>Ouros: </h2>
           {ouros.map((image, i) => (
@@ -52,11 +49,9 @@ const Home = () => {
 
         <Flex
           display={"flex"}
-          justifyContent={"center"}
+          justifyContent={"flex-start"}
           alignItems={"center"}
-          overflowY={"auto"}
-          maxH={400}
-          flexWrap={"wrap"}
+          overflowX={"auto"}
         >
           <h2>Paus: </h2>
           {paus.map((image, i) => (
@@ -66,11 +61,9 @@ const Home = () => {
 
         <Flex
           display={"flex"}
-          justifyContent={"center"}
+          justifyContent={"flex-start"}
           alignItems={"center"}
-          overflowY={"auto"}
-          maxH={400}
-          flexWrap={"wrap"}
+          overflowX={"auto"}
         >
           <h2>Espadas: </h2>
           {espadas.map((image, i) => (

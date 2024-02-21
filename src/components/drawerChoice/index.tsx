@@ -35,35 +35,65 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             px={0}
           >
             {/* Copas */}
-            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+            <Text
+              w={"100%"}
+              fontSize={22}
+              fontWeight={700}
+              borderBottom={"1px solid"}
+              textAlign={"center"}
+            >
               Copas
             </Text>
             <HandleCards>
               <ImHeart color="red" />
             </HandleCards>
             {/* Paus */}
-            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+            <Text
+              w={"100%"}
+              fontSize={22}
+              fontWeight={700}
+              borderBottom={"1px solid"}
+              textAlign={"center"}
+            >
               Paus
             </Text>
             <HandleCards>
               <ImClubs />
             </HandleCards>
             {/* Espadas */}
-            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+            <Text
+              w={"100%"}
+              fontSize={22}
+              fontWeight={700}
+              borderBottom={"1px solid"}
+              textAlign={"center"}
+            >
               Espadas
             </Text>
             <HandleCards>
               <ImSpades />
             </HandleCards>
             {/* Ouros */}
-            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+            <Text
+              w={"100%"}
+              fontSize={22}
+              fontWeight={700}
+              borderBottom={"1px solid"}
+              textAlign={"center"}
+            >
               Ouros
             </Text>
             <HandleCards>
               <ImDiamonds color="red" />
             </HandleCards>
             {/* Coringa */}
-            <Text w={"100%"} borderBottom={"1px solid"} textAlign={"center"}>
+            <Text
+              w={"100%"}
+              fontSize={22}
+              fontWeight={700}
+              borderBottom={"1px solid"}
+              textAlign={"center"}
+            >
               Coringa
             </Text>
             <HandleCards isJoker={true}>
