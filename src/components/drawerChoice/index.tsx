@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { GiCardJoker } from "react-icons/gi";
 import { ImClubs, ImDiamonds, ImHeart, ImSpades } from "react-icons/im";
-import HandleCards from "../handleCards";
+import RenderCards from "../renderCards";
 
 interface iDrawerChoice {
   btnRef: React.RefObject<HTMLButtonElement>;
@@ -29,8 +29,8 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
           <DrawerBody
             display={"flex"}
             flexDir={"column"}
-            gap={3}
-            maxH={300}
+            gap={4}
+            maxH={403}
             overflowY={"auto"}
             px={0}
           >
@@ -44,9 +44,9 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             >
               Copas
             </Text>
-            <HandleCards>
+            <RenderCards suit={"copas"}>
               <ImHeart color="red" />
-            </HandleCards>
+            </RenderCards>
             {/* Paus */}
             <Text
               w={"100%"}
@@ -57,9 +57,9 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             >
               Paus
             </Text>
-            <HandleCards>
+            <RenderCards suit={"paus"}>
               <ImClubs />
-            </HandleCards>
+            </RenderCards>
             {/* Espadas */}
             <Text
               w={"100%"}
@@ -70,9 +70,9 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             >
               Espadas
             </Text>
-            <HandleCards>
+            <RenderCards suit={"espadas"}>
               <ImSpades />
-            </HandleCards>
+            </RenderCards>
             {/* Ouros */}
             <Text
               w={"100%"}
@@ -83,9 +83,9 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             >
               Ouros
             </Text>
-            <HandleCards>
+            <RenderCards suit={"ouros"}>
               <ImDiamonds color="red" />
-            </HandleCards>
+            </RenderCards>
             {/* Coringa */}
             <Text
               w={"100%"}
@@ -96,9 +96,9 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             >
               Coringa
             </Text>
-            <HandleCards isJoker={true}>
+            <RenderCards suit={"joker"} isJoker={true}>
               <GiCardJoker color="purple" size={22} />
-            </HandleCards>
+            </RenderCards>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

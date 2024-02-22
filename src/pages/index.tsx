@@ -3,10 +3,11 @@ import { useRef } from "react";
 import fundoVerde from "../assets/fundo_verde.jpg";
 import DrawerChoice from "../components/drawerChoice";
 import ImageCard from "../components/imageCard";
-import { copas, espadas, ouros, paus } from "../utils";
 import { ContainerHomePage } from "./style";
+import { useWeb } from "../context/webContext";
 
 const Home = () => {
+  const { copas, espadas, paus, ouros, coringas } = useWeb();
   const { onOpen, isOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
 
@@ -29,7 +30,6 @@ const Home = () => {
           alignItems={"center"}
           overflowX={"auto"}
         >
-          <h2>Copas: </h2>
           {copas.map((image, i) => (
             <ImageCard key={i} image={image} />
           ))}
@@ -41,7 +41,6 @@ const Home = () => {
           alignItems={"center"}
           overflowX={"auto"}
         >
-          <h2>Ouros: </h2>
           {ouros.map((image, i) => (
             <ImageCard key={i} image={image} />
           ))}
@@ -53,7 +52,6 @@ const Home = () => {
           alignItems={"center"}
           overflowX={"auto"}
         >
-          <h2>Paus: </h2>
           {paus.map((image, i) => (
             <ImageCard key={i} image={image} />
           ))}
@@ -65,8 +63,17 @@ const Home = () => {
           alignItems={"center"}
           overflowX={"auto"}
         >
-          <h2>Espadas: </h2>
           {espadas.map((image, i) => (
+            <ImageCard key={i} image={image} />
+          ))}
+        </Flex>
+        <Flex
+          display={"flex"}
+          justifyContent={"flex-start"}
+          alignItems={"center"}
+          overflowX={"auto"}
+        >
+          {coringas.map((image, i) => (
             <ImageCard key={i} image={image} />
           ))}
         </Flex>

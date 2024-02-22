@@ -1,13 +1,17 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { allSymbols } from "../../utils";
+import { useWeb } from "../../context/webContext";
 
 interface iHandleCards {
   children: ReactNode;
   isJoker?: boolean;
+  suit: string;
 }
 
-const HandleCards = ({ children, isJoker }: iHandleCards) => {
+const RenderCards = ({ children, isJoker, suit }: iHandleCards) => {
+  const { handleIncreaseCards } = useWeb();
+
   return (
     <Flex
       gap={2}
@@ -44,6 +48,9 @@ const HandleCards = ({ children, isJoker }: iHandleCards) => {
               p={0}
               fontSize={17}
               borderRadius={3}
+              onClick={() => {
+                handleIncreaseCards("joker", suit);
+              }}
             >
               +
             </Button>
@@ -81,6 +88,12 @@ const HandleCards = ({ children, isJoker }: iHandleCards) => {
                 p={0}
                 fontSize={17}
                 borderRadius={3}
+                onClick={() => {
+                  const nameImage = `${suit}${symbol}`;
+                  console.log("Entrou", symbol);
+                  console.log("name", nameImage);
+                  handleIncreaseCards(nameImage, suit);
+                }}
               >
                 +
               </Button>
@@ -92,4 +105,4 @@ const HandleCards = ({ children, isJoker }: iHandleCards) => {
   );
 };
 
-export default HandleCards;
+export default RenderCards;
