@@ -10,7 +10,7 @@ interface iHandleCards {
 }
 
 const RenderCards = ({ children, isJoker, suit }: iHandleCards) => {
-  const { handleIncreaseCards } = useWeb();
+  const { handleIncreaseCards, handleDecreaseCards } = useWeb();
 
   return (
     <Flex
@@ -38,6 +38,9 @@ const RenderCards = ({ children, isJoker, suit }: iHandleCards) => {
               p={0}
               fontSize={17}
               borderRadius={3}
+              onClick={() => {
+                handleDecreaseCards("joker", suit);
+              }}
             >
               -
             </Button>
@@ -78,6 +81,10 @@ const RenderCards = ({ children, isJoker, suit }: iHandleCards) => {
                 p={0}
                 fontSize={17}
                 borderRadius={3}
+                onClick={() => {
+                  const nameImage = `${suit}${symbol}`;
+                  handleDecreaseCards(nameImage, suit);
+                }}
               >
                 -
               </Button>
@@ -90,8 +97,6 @@ const RenderCards = ({ children, isJoker, suit }: iHandleCards) => {
                 borderRadius={3}
                 onClick={() => {
                   const nameImage = `${suit}${symbol}`;
-                  console.log("Entrou", symbol);
-                  console.log("name", nameImage);
                   handleIncreaseCards(nameImage, suit);
                 }}
               >

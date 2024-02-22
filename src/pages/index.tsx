@@ -29,6 +29,8 @@ const Home = () => {
           justifyContent={"flex-start"}
           alignItems={"center"}
           overflowX={"auto"}
+          minW={"100%"}
+          minH={79}
         >
           {copas.map((image, i) => (
             <ImageCard key={i} image={image} />
@@ -40,17 +42,8 @@ const Home = () => {
           justifyContent={"flex-start"}
           alignItems={"center"}
           overflowX={"auto"}
-        >
-          {ouros.map((image, i) => (
-            <ImageCard key={i} image={image} />
-          ))}
-        </Flex>
-
-        <Flex
-          display={"flex"}
-          justifyContent={"flex-start"}
-          alignItems={"center"}
-          overflowX={"auto"}
+          minW={"100%"}
+          minH={79}
         >
           {paus.map((image, i) => (
             <ImageCard key={i} image={image} />
@@ -62,6 +55,21 @@ const Home = () => {
           justifyContent={"flex-start"}
           alignItems={"center"}
           overflowX={"auto"}
+          minW={"100%"}
+          minH={79}
+        >
+          {ouros.map((image, i) => (
+            <ImageCard key={i} image={image} />
+          ))}
+        </Flex>
+
+        <Flex
+          display={"flex"}
+          justifyContent={"flex-start"}
+          alignItems={"center"}
+          overflowX={"auto"}
+          minW={"100%"}
+          minH={79}
         >
           {espadas.map((image, i) => (
             <ImageCard key={i} image={image} />
@@ -72,6 +80,8 @@ const Home = () => {
           justifyContent={"flex-start"}
           alignItems={"center"}
           overflowX={"auto"}
+          minW={"100%"}
+          minH={79}
         >
           {coringas.map((image, i) => (
             <ImageCard key={i} image={image} />

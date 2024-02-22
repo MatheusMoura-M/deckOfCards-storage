@@ -10,4 +10,5 @@ export interface iAuthProviderData {
   coringas: string[];
   setCoringas: React.Dispatch<React.SetStateAction<string[]>>;
   handleIncreaseCards: (newCard: string, suit: string) => void;
+  handleDecreaseCards: (name: string, suit: string) => void;
 }

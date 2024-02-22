@@ -47,6 +47,7 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             <RenderCards suit={"copas"}>
               <ImHeart color="red" />
             </RenderCards>
+
             {/* Paus */}
             <Text
               w={"100%"}
@@ -60,19 +61,7 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             <RenderCards suit={"paus"}>
               <ImClubs />
             </RenderCards>
-            {/* Espadas */}
-            <Text
-              w={"100%"}
-              fontSize={22}
-              fontWeight={700}
-              borderBottom={"1px solid"}
-              textAlign={"center"}
-            >
-              Espadas
-            </Text>
-            <RenderCards suit={"espadas"}>
-              <ImSpades />
-            </RenderCards>
+
             {/* Ouros */}
             <Text
               w={"100%"}
@@ -86,6 +75,21 @@ const DrawerChoice = ({ btnRef, isOpen, onClose }: iDrawerChoice) => {
             <RenderCards suit={"ouros"}>
               <ImDiamonds color="red" />
             </RenderCards>
+
+            {/* Espadas */}
+            <Text
+              w={"100%"}
+              fontSize={22}
+              fontWeight={700}
+              borderBottom={"1px solid"}
+              textAlign={"center"}
+            >
+              Espadas
+            </Text>
+            <RenderCards suit={"espadas"}>
+              <ImSpades />
+            </RenderCards>
+
             {/* Coringa */}
             <Text
               w={"100%"}
