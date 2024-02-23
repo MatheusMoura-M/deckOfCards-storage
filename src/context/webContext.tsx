@@ -204,9 +204,73 @@ export const WebProvider = ({ children }: iProviderProps) => {
     joker,
   };
 
+  const cardImports: { [key: string]: string } = {
+    copas1,
+    copas2,
+    copas3,
+    copas4,
+    copas5,
+    copas6,
+    copas7,
+    copas8,
+    copas9,
+    copas10,
+    copasJ,
+    copasQ,
+    copasK,
+    copasA,
+    ouros1,
+    ouros2,
+    ouros3,
+    ouros4,
+    ouros5,
+    ouros6,
+    ouros7,
+    ouros8,
+    ouros9,
+    ouros10,
+    ourosJ,
+    ourosQ,
+    ourosK,
+    ourosA,
+    paus1,
+    paus2,
+    paus3,
+    paus4,
+    paus5,
+    paus6,
+    paus7,
+    paus8,
+    paus9,
+    paus10,
+    pausJ,
+    pausQ,
+    pausK,
+    pausA,
+    espadas1,
+    espadas2,
+    espadas3,
+    espadas4,
+    espadas5,
+    espadas6,
+    espadas7,
+    espadas8,
+    espadas9,
+    espadas10,
+    espadasJ,
+    espadasQ,
+    espadasK,
+    espadasA,
+    joker,
+  };
+
   const getImportByName = (name: string) => {
+    return cardImports[name];
+  };
+  const getImportByNamee = (name: string) => {
     return imageImports[name];
   };
+  getImportByNamee("copas2");
 
   const suitHandler: {
     [key: string]: React.Dispatch<React.SetStateAction<string[]>>;
@@ -229,21 +293,21 @@ export const WebProvider = ({ children }: iProviderProps) => {
       }
 
       console.log("F", newCard);
-      if (newCard.startsWith("/assets")) {
-        console.log("G", newCard.split("/assets/"));
-        const a = newCard.split("/assets/")[1];
-        console.log("H", a);
+      // if (newCard.startsWith("/assets")) {
+      //   console.log("G", newCard.split("/assets/"));
+      //   const a = newCard.split("/assets/")[1];
+      //   console.log("H", a);
 
-        const aFormatted = a.split("-")[0];
-        console.log("I", aFormatted);
-      } else {
-        console.log("G", newCard.split("/deck/"));
-        const a = newCard.split("/deck/")[1];
-        console.log("H", a);
+      //   const aFormatted = a.split("-")[0];
+      //   console.log("I", aFormatted);
+      // } else {
+      //   console.log("G", newCard.split("/deck/"));
+      //   const a = newCard.split("/deck/")[1];
+      //   console.log("H", a);
 
-        const aFormatted = a.split(".")[0];
-        console.log("I", aFormatted);
-      }
+      //   const aFormatted = a.split(".")[0];
+      //   console.log("I", aFormatted);
+      // }
       const newCardValue = newCard.split("/deck/")[1].split(".")[0];
       newCardValue.trim();
       console.log("J");
