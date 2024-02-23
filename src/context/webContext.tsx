@@ -215,7 +215,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
     paus: setPaus,
     ouros: setOuros,
     espadas: setEspadas,
-    coringa: setCoringas,
+    joker: setCoringas,
   };
 
   const handleIncreaseCards = (name: string, suit: string) => {
@@ -231,10 +231,10 @@ export const WebProvider = ({ children }: iProviderProps) => {
       } else {
         newCardValue = newCard.split("/deck/")[1].split(".")[0];
       }
-      console.log("Card", newCardValue);
+      console.log("Card :", newCardValue);
       newCardValue.trim();
 
-      console.log(suit);
+      console.log("suit: ", suit);
       if (suit === "joker") {
         const countJokers = oldValue.filter(
           (value) => value.split("/deck/")[1].split(".")[0] === "joker"
@@ -248,11 +248,13 @@ export const WebProvider = ({ children }: iProviderProps) => {
           return oldValue;
         }
       }
+      console.log("AAA");
 
       const countSpecificCard = oldValue.filter(
         (value) => value.split("/deck/")[1].split(".")[0] === newCardValue
       ).length;
 
+      console.log("BBB");
       const canAddCard =
         countSpecificCard === 0 ||
         (newCardValue.endsWith("A") && countSpecificCard < 2);
