@@ -229,8 +229,8 @@ export const WebProvider = ({ children }: iProviderProps) => {
       if (!newCard) {
         console.error(`Carta não encontrada: ${name}`);
       }
-      console.log("F");
-      let newCardValue = newCard.split("/deck/")[1].split(".")[0];
+      console.log("F", newCard);
+      const newCardValue = newCard.split("/deck/")[1].split(".")[0];
       newCardValue.trim();
       console.log("G");
 
