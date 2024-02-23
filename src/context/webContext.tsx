@@ -229,7 +229,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
       }
 
       console.log("F", newCard);
-      console.log("G", newCard.split("/deck/")[1]);
+      console.log("G", newCard.split("/deck/"));
       const a = newCard.split("/deck/")[1];
       console.log("H", a);
 
