@@ -219,12 +219,23 @@ export const WebProvider = ({ children }: iProviderProps) => {
   };
 
   const handleIncreaseCards = (name: string, suit: string) => {
+    console.log("A");
     const updateSuit = suitHandler[suit];
+    console.log("B");
     if (!updateSuit) return;
+    console.log("C");
 
     updateSuit((oldValue) => {
+      console.log("D");
       const newCard = getImportByName(name);
+      console.log("E");
+      console.log(newCard);
+      if (!newCard) {
+        console.error(`Carta não encontrada: ${name}`);
+      }
+      console.log("F");
       const newCardValue = newCard.split("/deck/")[1].split(".")[0];
+      console.log("G");
 
       if (suit === "joker") {
         const countJokers = oldValue.filter(
