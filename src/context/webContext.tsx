@@ -229,12 +229,21 @@ export const WebProvider = ({ children }: iProviderProps) => {
       }
 
       console.log("F", newCard);
-      console.log("G", newCard.split("/deck/"));
-      const a = newCard.split("/deck/")[1];
-      console.log("H", a);
+      if (newCard.startsWith("/assets")) {
+        console.log("G", newCard.split("/assets/"));
+        const a = newCard.split("/assets/")[1];
+        console.log("H", a);
 
-      const aFormatted = a.split(".")[0];
-      console.log("I", aFormatted);
+        const aFormatted = a.split("-")[0];
+        console.log("I", aFormatted);
+      } else {
+        console.log("G", newCard.split("/deck/"));
+        const a = newCard.split("/deck/")[1];
+        console.log("H", a);
+
+        const aFormatted = a.split(".")[0];
+        console.log("I", aFormatted);
+      }
       const newCardValue = newCard.split("/deck/")[1].split(".")[0];
       newCardValue.trim();
       console.log("J");
