@@ -221,7 +221,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
   const handleIncreaseCards = (name: string, suit: string) => {
     const updateSuit = suitHandler[suit];
     if (!updateSuit) return;
-
+    console.log("11", name);
     updateSuit((oldValue) => {
       const newCard = getImportByName(name);
       if (!newCard) {
