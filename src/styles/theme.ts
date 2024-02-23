@@ -104,112 +104,116 @@ const custonTheme = extendTheme({
   },
   styles: {
     global: {
-      body: {
-        bg: "#F7F7F7",
-      },
+      // body: {
+      //   bg: "#F7F7F7",
+      //   bgImage: { fundoVerde },
+      //   bgSize: "200%",
+      //   bgRepeat: "no-repeat",
+      //   bgPosition: "center center",
+      // },
     },
   },
-  components: {
-    Button: {
-      variants: {
-        default: {
-          bg: "#0B0D0D",
-          color: "#FFFFFF",
-        },
-        grey0: {
-          w: "120px",
-          h: "48px",
-          bg: "#0B0D0D",
-          color: "#FFFFFF",
-          _hover: {
-            bg: "#212529",
-            color: "#FFFFFF",
-            transition: "0.5s",
-          },
-          transition: "0.5s",
-        },
-        grey1: {
-          w: "120px",
-          h: "48px",
-          bg: "#DEE2E6",
-          color: "#212529",
-          _hover: {
-            bg: "#CED4DA",
-            color: "#212529",
-            transition: "0.5s",
-          },
-          transition: "0.5s",
-        },
-        grey2: {
-          w: "120px",
-          h: "48px",
-          bg: "#CED4DA",
-          color: "#FFFFFF",
-          _hover: {
-            color: "#212529",
-            transition: "0.5s",
-          },
-          transition: "0.5s",
-        },
-        invisible: {
-          w: "120px",
-          h: "48px",
-          bg: "transparent",
-          color: "#FDFDFD",
-          border: "2px solid",
-          borderColor: "#FDFDFD",
-          _hover: {
-            bg: "#FDFDFD",
-            color: "#212529",
-            transition: "0.5s",
-          },
-          transition: "0.5s",
-        },
-        alert1: {
-          w: "120px",
-          h: "48px",
-          bg: "#FFE5E5",
-          color: "#CD2B31",
-          _hover: {
-            bg: "#FDD8D8",
-            color: "#CD2B31",
-            transition: "0.5s",
-          },
-          transition: "0.5s",
-        },
-        sucess1: {
-          w: "120px",
-          h: "48px",
-          bg: "#DDF3E4",
-          color: "#18794E",
-          _hover: {
-            bg: "#DDF3E4",
-            color: "#18794E",
-            transition: "0.5s",
-          },
-          transition: "0.5s",
-        },
-        brand1: {
-          w: "120px",
-          h: "48px",
-          bg: "#4529E6",
-          color: "#FFFFFF",
-          _hover: {
-            bg: "#5126EA",
-            color: "#FFFFFF",
-            transition: "0.5s",
-          },
-          transition: "0.5s",
-        },
-        brand2: {
-          w: "120px",
-          h: "48px",
-          bg: "#EDEAFD",
-          color: "#4529E6",
-        },
-      },
-    },
-  },
+  // components: {
+  //   Button: {
+  //     variants: {
+  //       default: {
+  //         bg: "#0B0D0D",
+  //         color: "#FFFFFF",
+  //       },
+  //       grey0: {
+  //         w: "120px",
+  //         h: "48px",
+  //         bg: "#0B0D0D",
+  //         color: "#FFFFFF",
+  //         _hover: {
+  //           bg: "#212529",
+  //           color: "#FFFFFF",
+  //           transition: "0.5s",
+  //         },
+  //         transition: "0.5s",
+  //       },
+  //       grey1: {
+  //         w: "120px",
+  //         h: "48px",
+  //         bg: "#DEE2E6",
+  //         color: "#212529",
+  //         _hover: {
+  //           bg: "#CED4DA",
+  //           color: "#212529",
+  //           transition: "0.5s",
+  //         },
+  //         transition: "0.5s",
+  //       },
+  //       grey2: {
+  //         w: "120px",
+  //         h: "48px",
+  //         bg: "#CED4DA",
+  //         color: "#FFFFFF",
+  //         _hover: {
+  //           color: "#212529",
+  //           transition: "0.5s",
+  //         },
+  //         transition: "0.5s",
+  //       },
+  //       invisible: {
+  //         w: "120px",
+  //         h: "48px",
+  //         bg: "transparent",
+  //         color: "#FDFDFD",
+  //         border: "2px solid",
+  //         borderColor: "#FDFDFD",
+  //         _hover: {
+  //           bg: "#FDFDFD",
+  //           color: "#212529",
+  //           transition: "0.5s",
+  //         },
+  //         transition: "0.5s",
+  //       },
+  //       alert1: {
+  //         w: "120px",
+  //         h: "48px",
+  //         bg: "#FFE5E5",
+  //         color: "#CD2B31",
+  //         _hover: {
+  //           bg: "#FDD8D8",
+  //           color: "#CD2B31",
+  //           transition: "0.5s",
+  //         },
+  //         transition: "0.5s",
+  //       },
+  //       sucess1: {
+  //         w: "120px",
+  //         h: "48px",
+  //         bg: "#DDF3E4",
+  //         color: "#18794E",
+  //         _hover: {
+  //           bg: "#DDF3E4",
+  //           color: "#18794E",
+  //           transition: "0.5s",
+  //         },
+  //         transition: "0.5s",
+  //       },
+  //       brand1: {
+  //         w: "120px",
+  //         h: "48px",
+  //         bg: "#4529E6",
+  //         color: "#FFFFFF",
+  //         _hover: {
+  //           bg: "#5126EA",
+  //           color: "#FFFFFF",
+  //           transition: "0.5s",
+  //         },
+  //         transition: "0.5s",
+  //       },
+  //       brand2: {
+  //         w: "120px",
+  //         h: "48px",
+  //         bg: "#EDEAFD",
+  //         color: "#4529E6",
+  //       },
+  //     },
+  //   },
+  // },
 });
 
 export default custonTheme;
