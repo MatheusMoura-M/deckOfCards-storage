@@ -224,12 +224,12 @@ export const WebProvider = ({ children }: iProviderProps) => {
 
     updateSuit((oldValue) => {
       const newCard = getImportByName(name);
-      console.log("E");
-      console.log(newCard);
       if (!newCard) {
         console.error(`Carta não encontrada: ${name}`);
       }
+
       console.log("F", newCard);
+      console.log("G", newCard.split("/deck/")[1].split(".")[0]);
       const newCardValue = newCard.split("/deck/")[1].split(".")[0];
       newCardValue.trim();
       console.log("G");
