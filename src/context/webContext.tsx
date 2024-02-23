@@ -229,10 +229,15 @@ export const WebProvider = ({ children }: iProviderProps) => {
       }
 
       console.log("F", newCard);
-      console.log("G", newCard.split("/deck/")[1].split(".")[0]);
+      console.log("G", newCard.split("/deck/")[1]);
+      const a = newCard.split("/deck/")[1];
+      console.log("H", a);
+
+      const aFormatted = a.split(".")[0];
+      console.log("I", aFormatted);
       const newCardValue = newCard.split("/deck/")[1].split(".")[0];
       newCardValue.trim();
-      console.log("G");
+      console.log("J");
 
       // if (suit === "joker") {
       //   const countJokers = oldValue.filter(
