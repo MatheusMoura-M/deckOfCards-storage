@@ -234,10 +234,13 @@ export const WebProvider = ({ children }: iProviderProps) => {
       console.log("Card", newCardValue);
       newCardValue.trim();
 
+      console.log(suit);
       if (suit === "joker") {
         const countJokers = oldValue.filter(
           (value) => value.split("/deck/")[1].split(".")[0] === "joker"
         ).length;
+
+        console.log(countJokers);
 
         if (countJokers < 4) {
           return [...oldValue, newCard];
@@ -246,17 +249,17 @@ export const WebProvider = ({ children }: iProviderProps) => {
         }
       }
 
-      // const countSpecificCard = oldValue.filter(
-      //   (value) => value.split("/deck/")[1].split(".")[0] === newCardValue
-      // ).length;
+      const countSpecificCard = oldValue.filter(
+        (value) => value.split("/deck/")[1].split(".")[0] === newCardValue
+      ).length;
 
-      // const canAddCard =
-      //   countSpecificCard === 0 ||
-      //   (newCardValue.endsWith("A") && countSpecificCard < 2);
+      const canAddCard =
+        countSpecificCard === 0 ||
+        (newCardValue.endsWith("A") && countSpecificCard < 2);
 
-      // if (canAddCard) {
-      //   return [...oldValue, newCard];
-      // }
+      if (canAddCard) {
+        return [...oldValue, newCard];
+      }
 
       return oldValue;
     });
