@@ -8,7 +8,7 @@ import copas6 from "../assets/deck/copas6.svg";
 import copas7 from "../assets/deck/copas7.svg";
 import copas8 from "../assets/deck/copas8.svg";
 import copas9 from "../assets/deck/copas9.svg";
-import copas10 from "../assets/deck/copas10.svg";
+import copas10 from "../assets/deck/copas10.png";
 import copasJ from "../assets/deck/copasJ.png";
 import copasQ from "../assets/deck/copasQ.png";
 import copasK from "../assets/deck/copasK.png";

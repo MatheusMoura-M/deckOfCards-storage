@@ -8,7 +8,6 @@ import copas6 from "../assets/deck/copas6.svg";
 import copas7 from "../assets/deck/copas7.svg";
 import copas8 from "../assets/deck/copas8.svg";
 import copas9 from "../assets/deck/copas9.svg";
-// import copas10 from "../assets/deck/copas10.svg";
 import copas10 from "../assets/deck/copas10.png";
 import copasJ from "../assets/deck/copasJ.png";
 import copasQ from "../assets/deck/copasQ.png";
@@ -269,6 +268,10 @@ export const WebProvider = ({ children }: iProviderProps) => {
 
   const manipulationSplit = (value: string, withCondition?: string) => {
     if (withCondition) {
+      console.log("AA", value.split("/assets/")[1]);
+      console.log("BB", value.split("/assets/")[1].split("-"));
+      console.log("CC", value.split("/assets/")[1].split("-")[0]);
+
       const valueFormatted =
         withCondition === "/assets/"
           ? value.split("/assets/")[1].split("-")[0]
