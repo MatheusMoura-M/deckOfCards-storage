@@ -293,9 +293,12 @@ export const WebProvider = ({ children }: iProviderProps) => {
       const newCard = getImportByName(name);
       let newCardValue = "";
 
+      console.log(newCard);
       if (manipulationSplit(newCard)) {
         newCardValue = manipulationSplit(newCard);
       } else {
+        console.log("Entrou");
+
         return sortCards(oldValue);
       }
 
