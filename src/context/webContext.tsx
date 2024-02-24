@@ -295,7 +295,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
       let countSpecificCard = 0;
 
       console.log("BBB", cardValueToRemove);
-      if (cardValueToRemove.startsWith("/assets/")) {
+      if (cardToRemove.startsWith("/assets/")) {
         countSpecificCard = oldValue.filter(
           (value) =>
             value.split("/assets/")[1].split("-")[0] === cardValueToRemove
@@ -318,7 +318,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
         let indexToRemove = 0;
 
         console.log("CCC", cardValueToRemove);
-        if (cardValueToRemove.startsWith("/assets/")) {
+        if (cardToRemove.startsWith("/assets/")) {
           indexToRemove = oldValue.findIndex(
             (value) =>
               value.split("/assets/")[1].split("-")[0] === cardValueToRemove
