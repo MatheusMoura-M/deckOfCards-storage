@@ -235,6 +235,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
       newCardValue.trim();
 
       console.log("suit: ", suit);
+      console.log("suit: ", suit);
       if (suit === "joker") {
         const countJokers = oldValue.filter(
           (value) => value.split("/deck/")[1].split(".")[0] === "joker"
