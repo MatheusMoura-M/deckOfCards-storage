@@ -31,7 +31,7 @@ import ourosK from "../assets/ourosK.svg";
 import ourosA from "../assets/ourosA.jpg";
 
 // Importação das cartas de Paus
-import paus1 from "../assets/paus1.png";
+import paus1 from "../assets/paus1.svg";
 import paus2 from "../assets/paus2.svg";
 import paus3 from "../assets/paus3.svg";
 import paus4 from "../assets/paus4.svg";
