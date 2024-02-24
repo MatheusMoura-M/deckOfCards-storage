@@ -268,15 +268,12 @@ export const WebProvider = ({ children }: iProviderProps) => {
 
   const manipulationSplit = (value: string, withCondition?: string) => {
     if (withCondition) {
-      console.log("AA", value.split("/assets/")[1]);
-      console.log("BB", value.split("/assets/")[1].split("-"));
-      console.log("CC", value.split("/assets/")[1].split("-")[0]);
-
       const valueFormatted =
         withCondition === "/assets/"
           ? value.split("/assets/")[1].split("-")[0]
           : value.split("/deck/")[1].split(".")[0];
 
+      console.log("AAA");
       return valueFormatted;
     } else {
       const valueFormatted = value.startsWith("/assets/")
