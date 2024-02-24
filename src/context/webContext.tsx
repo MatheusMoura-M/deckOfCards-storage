@@ -46,7 +46,7 @@ import pausQ from "../assets/deck/pausQ.png";
 import pausK from "../assets/deck/pausK.png";
 import pausA from "../assets/deck/pausA.jpg";
 
-// Importação das cartas de Espada
+// Importação das cartas de Espadas
 import espadas1 from "../assets/deck/espadas1.svg";
 import espadas2 from "../assets/deck/espadas2.png";
 import espadas3 from "../assets/deck/espadas3.svg";
@@ -72,7 +72,6 @@ import { iAuthProviderData } from "./interface";
 export const WebContext = createContext<iAuthProviderData>(
   {} as iAuthProviderData
 );
-
 export const WebProvider = ({ children }: iProviderProps) => {
   const [copas, setCopas] = useState<string[]>([
     // copas1,
