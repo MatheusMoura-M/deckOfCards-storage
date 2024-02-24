@@ -307,10 +307,12 @@ export const WebProvider = ({ children }: iProviderProps) => {
         let countJokers = 0;
 
         if (newCard.startsWith("/assets/")) {
+          console.log("old", oldValue);
           countJokers = oldValue.filter(
             (value) => manipulationSplit(value, "/assets/") === "joker"
           ).length;
         } else {
+          console.log("oldElse", oldValue);
           countJokers = oldValue.filter(
             (value) => manipulationSplit(value, "/deck/") === "joker"
           ).length;
