@@ -1,69 +1,69 @@
 // Importação das cartas de Copas
-import copas1 from "../assets/deck/copas1.svg";
-import copas2 from "../assets/deck/copas2.svg";
-import copas3 from "../assets/deck/copas3.svg";
-import copas4 from "../assets/deck/copas4.svg";
-import copas5 from "../assets/deck/copas5.svg";
-import copas6 from "../assets/deck/copas6.svg";
-import copas7 from "../assets/deck/copas7.svg";
-import copas8 from "../assets/deck/copas8.svg";
-import copas9 from "../assets/deck/copas9.svg";
-import copas10 from "../assets/deck/copas10.svg";
-import copasJ from "../assets/deck/copasJ.png";
-import copasQ from "../assets/deck/copasQ.png";
-import copasK from "../assets/deck/copasK.png";
-import copasA from "../assets/deck/copasA.jpg";
+import copas1 from "../assets/copas1.svg";
+import copas2 from "../assets/copas2.svg";
+import copas3 from "../assets/copas3.svg";
+import copas4 from "../assets/copas4.svg";
+import copas5 from "../assets/copas5.svg";
+import copas6 from "../assets/copas6.svg";
+import copas7 from "../assets/copas7.svg";
+import copas8 from "../assets/copas8.svg";
+import copas9 from "../assets/copas9.svg";
+import copas10 from "../assets/copas10.png";
+import copasJ from "../assets/copasJ.png";
+import copasQ from "../assets/copasQ.png";
+import copasK from "../assets/copasK.png";
+import copasA from "../assets/copasA.jpg";
 
 // Importação das cartas de Ouros
-import ouros1 from "../assets/deck/ouros1.svg";
-import ouros2 from "../assets/deck/ouros2.svg";
-import ouros3 from "../assets/deck/ouros3.svg";
-import ouros4 from "../assets/deck/ouros4.svg";
-import ouros5 from "../assets/deck/ouros5.svg";
-import ouros6 from "../assets/deck/ouros6.svg";
-import ouros7 from "../assets/deck/ouros7.svg";
-import ouros8 from "../assets/deck/ouros8.svg";
-import ouros9 from "../assets/deck/ouros9.svg";
-import ouros10 from "../assets/deck/ouros10.svg";
-import ourosJ from "../assets/deck/ourosJ.png";
-import ourosQ from "../assets/deck/ourosQ.png";
-import ourosK from "../assets/deck/ourosK.svg";
-import ourosA from "../assets/deck/ourosA.jpg";
+import ouros1 from "../assets/ouros1.svg";
+import ouros2 from "../assets/ouros2.svg";
+import ouros3 from "../assets/ouros3.svg";
+import ouros4 from "../assets/ouros4.svg";
+import ouros5 from "../assets/ouros5.png";
+import ouros6 from "../assets/ouros6.svg";
+import ouros7 from "../assets/ouros7.svg";
+import ouros8 from "../assets/ouros8.svg";
+import ouros9 from "../assets/ouros9.svg";
+import ouros10 from "../assets/ouros10.svg";
+import ourosJ from "../assets/ourosJ.png";
+import ourosQ from "../assets/ourosQ.png";
+import ourosK from "../assets/ourosK.svg";
+import ourosA from "../assets/ourosA.jpg";
 
 // Importação das cartas de Paus
-import paus1 from "../assets/deck/paus1.svg";
-import paus2 from "../assets/deck/paus2.svg";
-import paus3 from "../assets/deck/paus3.svg";
-import paus4 from "../assets/deck/paus4.svg";
-import paus5 from "../assets/deck/paus5.svg";
-import paus6 from "../assets/deck/paus6.svg";
-import paus7 from "../assets/deck/paus7.svg";
-import paus8 from "../assets/deck/paus8.svg";
-import paus9 from "../assets/deck/paus9.svg";
-import paus10 from "../assets/deck/paus10.svg";
-import pausJ from "../assets/deck/pausJ.svg";
-import pausQ from "../assets/deck/pausQ.png";
-import pausK from "../assets/deck/pausK.png";
-import pausA from "../assets/deck/pausA.jpg";
+import paus1 from "../assets/paus1.svg";
+import paus2 from "../assets/paus2.svg";
+import paus3 from "../assets/paus3.svg";
+import paus4 from "../assets/paus4.svg";
+import paus5 from "../assets/paus5.svg";
+import paus6 from "../assets/paus6.svg";
+import paus7 from "../assets/paus7.svg";
+import paus8 from "../assets/paus8.svg";
+import paus9 from "../assets/paus9.svg";
+import paus10 from "../assets/paus10.svg";
+import pausJ from "../assets/pausJ.svg";
+import pausQ from "../assets/pausQ.png";
+import pausK from "../assets/pausK.png";
+import pausA from "../assets/pausA.jpg";
 
 // Importação das cartas de Espadas
-import espadas1 from "../assets/deck/espadas1.svg";
-import espadas2 from "../assets/deck/espadas2.svg";
-import espadas3 from "../assets/deck/espadas3.svg";
-import espadas4 from "../assets/deck/espadas4.svg";
-import espadas5 from "../assets/deck/espadas5.svg";
-import espadas6 from "../assets/deck/espadas6.svg";
-import espadas7 from "../assets/deck/espadas7.svg";
-import espadas8 from "../assets/deck/espadas8.svg";
-import espadas9 from "../assets/deck/espadas9.svg";
-import espadas10 from "../assets/deck/espadas10.svg";
-import espadasJ from "../assets/deck/espadasJ.png";
-import espadasQ from "../assets/deck/espadasQ.png";
-import espadasK from "../assets/deck/espadasK.png";
-import espadasA from "../assets/deck/espadasA.jpg";
+import espadas1 from "../assets/espadas1.svg";
+import espadas2 from "../assets/espadas2.png";
+import espadas3 from "../assets/espadas3.svg";
+import espadas4 from "../assets/espadas4.svg";
+import espadas5 from "../assets/espadas5.svg";
+import espadas6 from "../assets/espadas6.svg";
+import espadas7 from "../assets/espadas7.svg";
+import espadas8 from "../assets/espadas8.svg";
+import espadas9 from "../assets/espadas9.svg";
+import espadas10 from "../assets/espadas10.svg";
+import espadasJ from "../assets/espadasJ.png";
+import espadasQ from "../assets/espadasQ.png";
+import espadasK from "../assets/espadasK.png";
+import espadasA from "../assets/espadasA.jpg";
 
 // Importação do coringa
-import joker from "../assets/deck/joker.jpg";
+import joker from "../assets/joker.jpg";
 
 import { createContext, useContext, useState } from "react";
 import { iProviderProps } from "../interfaces";
@@ -72,7 +72,6 @@ import { iAuthProviderData } from "./interface";
 export const WebContext = createContext<iAuthProviderData>(
   {} as iAuthProviderData
 );
-
 export const WebProvider = ({ children }: iProviderProps) => {
   const [copas, setCopas] = useState<string[]>([
     // copas1,
@@ -239,7 +238,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
   const extractCardValue = (cardPath: string) => {
     const parts = cardPath.startsWith("/assets/")
       ? cardPath.split("/assets/")[1].split("-")[0]
-      : cardPath.split("/deck/")[1].split(".")[0];
+      : cardPath.split("/assets/")[1].split(".")[0];
 
     return parts.match(/\d+|[A-Z]+/gm)![0]; // Extrai números ou letras maiúsculas
   };
@@ -271,14 +270,14 @@ export const WebProvider = ({ children }: iProviderProps) => {
       const valueFormatted =
         withCondition === "/assets/"
           ? value.split("/assets/")[1].split("-")[0]
-          : value.split("/deck/")[1].split(".")[0];
+          : value.split("/assets/")[1].split(".")[0];
 
       return valueFormatted;
     } else {
       const valueFormatted = value.startsWith("/assets/")
         ? value.split("/assets/")[1].split("-")[0]
         : value.startsWith("/src/")
-        ? value.split("/deck/")[1].split(".")[0]
+        ? value.split("/assets/")[1].split(".")[0]
         : "";
 
       return valueFormatted;
@@ -293,6 +292,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
       const newCard = getImportByName(name);
       let newCardValue = "";
 
+      console.log(newCard);
       if (manipulationSplit(newCard)) {
         newCardValue = manipulationSplit(newCard);
       } else {
@@ -303,18 +303,18 @@ export const WebProvider = ({ children }: iProviderProps) => {
         let countJokers = 0;
 
         if (newCard.startsWith("/assets/")) {
+          console.log("old", oldValue);
           countJokers = oldValue.filter(
             (value) => manipulationSplit(value, "/assets/") === "joker"
           ).length;
         } else {
+          console.log("oldElse", oldValue);
           countJokers = oldValue.filter(
-            (value) => manipulationSplit(value, "/deck/") === "joker"
+            (value) => manipulationSplit(value, "/") === "joker"
           ).length;
         }
 
-        const sortedCards = sortCards([...oldValue, newCard]);
-
-        return countJokers < 4 ? sortedCards : sortCards(oldValue);
+        return countJokers < 4 ? [...oldValue, newCard] : oldValue;
       }
 
       let countSpecificCard = 0;
@@ -325,7 +325,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
         ).length;
       } else {
         countSpecificCard = oldValue.filter(
-          (value) => manipulationSplit(value, "/deck/") === newCardValue
+          (value) => manipulationSplit(value, "/") === newCardValue
         ).length;
       }
 
@@ -361,7 +361,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
         ).length;
       } else {
         countSpecificCard = oldValue.filter(
-          (value) => manipulationSplit(value, "/deck/") === cardValueToRemove
+          (value) => manipulationSplit(value, "/") === cardValueToRemove
         ).length;
       }
 
@@ -381,7 +381,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
           );
         } else {
           indexToRemove = oldValue.findIndex(
-            (value) => manipulationSplit(value, "/deck/") === cardValueToRemove
+            (value) => manipulationSplit(value, "/") === cardValueToRemove
           );
         }
 
