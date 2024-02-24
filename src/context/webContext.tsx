@@ -215,53 +215,127 @@ export const WebProvider = ({ children }: iProviderProps) => {
     paus: setPaus,
     ouros: setOuros,
     espadas: setEspadas,
-    coringa: setCoringas,
+    joker: setCoringas,
+  };
+
+  const cardOrder: { [key: string]: number } = {
+    A: 1,
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 5,
+    "5": 6,
+    "6": 7,
+    "7": 8,
+    "8": 9,
+    "9": 10,
+    "10": 11,
+    J: 12,
+    Q: 13,
+    K: 14,
+  };
+
+  // Função para extrair o valor da carta do caminho do arquivo
+  const extractCardValue = (cardPath: string) => {
+    const parts = cardPath.startsWith("/assets/")
+      ? cardPath.split("/assets/")[1].split("-")[0]
+      : cardPath.split("/deck/")[1].split(".")[0];
+
+    return parts.match(/\d+|[A-Z]+/gm)![0]; // Extrai números ou letras maiúsculas
+  };
+
+  const sortCards = (cards: string[]) => {
+    const orderedCards = cards.sort((a, b) => {
+      const aValue = extractCardValue(a);
+      const bValue = extractCardValue(b);
+      return cardOrder[aValue] - cardOrder[bValue];
+    });
+
+    const aceIndexes = orderedCards.reduce((acc: number[], card, index) => {
+      if (extractCardValue(card) === "A") acc.push(index);
+      return acc;
+    }, [] as number[]);
+
+    if (aceIndexes.length > 1) {
+      const secondAceIndex = aceIndexes[1]; // Obtém o índice do segundo Ás
+      const secondAce = orderedCards.splice(secondAceIndex, 1); // Remove o segundo Ás do array
+
+      orderedCards.push(secondAce[0]); // Adiciona o segundo Ás removido ao final do array
+    }
+
+    return orderedCards;
+  };
+
+  const manipulationSplit = (value: string, withCondition?: string) => {
+    if (withCondition) {
+      const valueFormatted =
+        withCondition === "/assets/"
+          ? value.split("/assets/")[1].split("-")[0]
+          : value.split("/deck/")[1].split(".")[0];
+
+      return valueFormatted;
+    } else {
+      const valueFormatted = value.startsWith("/assets/")
+        ? value.split("/assets/")[1].split("-")[0]
+        : value.startsWith("/src/")
+        ? value.split("/deck/")[1].split(".")[0]
+        : "";
+
+      return valueFormatted;
+    }
   };
 
   const handleIncreaseCards = (name: string, suit: string) => {
-    console.log("A");
     const updateSuit = suitHandler[suit];
-    console.log("B");
     if (!updateSuit) return;
-    console.log("C");
 
     updateSuit((oldValue) => {
-      console.log("D");
       const newCard = getImportByName(name);
-      console.log("E");
-      console.log(newCard);
-      if (!newCard) {
-        console.error(`Carta não encontrada: ${name}`);
+      let newCardValue = "";
+
+      if (manipulationSplit(newCard)) {
+        newCardValue = manipulationSplit(newCard);
+      } else {
+        return sortCards(oldValue);
       }
-      console.log("F");
-      const newCardValue = newCard.split("/deck/")[1].split(".")[0];
-      console.log("G");
 
       if (suit === "joker") {
-        const countJokers = oldValue.filter(
-          (value) => value.split("/deck/")[1].split(".")[0] === "joker"
-        ).length;
+        let countJokers = 0;
 
-        if (countJokers < 4) {
-          return [...oldValue, newCard];
+        if (newCard.startsWith("/assets/")) {
+          countJokers = oldValue.filter(
+            (value) => manipulationSplit(value, "/assets/") === "joker"
+          ).length;
         } else {
-          return oldValue;
+          countJokers = oldValue.filter(
+            (value) => manipulationSplit(value, "/deck/") === "joker"
+          ).length;
         }
+
+        const sortedCards = sortCards([...oldValue, newCard]);
+
+        return countJokers < 4 ? sortedCards : sortCards(oldValue);
       }
 
-      const countSpecificCard = oldValue.filter(
-        (value) => value.split("/deck/")[1].split(".")[0] === newCardValue
-      ).length;
+      let countSpecificCard = 0;
+
+      if (newCard.startsWith("/assets/")) {
+        countSpecificCard = oldValue.filter(
+          (value) => manipulationSplit(value, "/assets/") === newCardValue
+        ).length;
+      } else {
+        countSpecificCard = oldValue.filter(
+          (value) => manipulationSplit(value, "/deck/") === newCardValue
+        ).length;
+      }
 
       const canAddCard =
         countSpecificCard === 0 ||
         (newCardValue.endsWith("A") && countSpecificCard < 2);
 
-      if (canAddCard) {
-        return [...oldValue, newCard];
-      }
+      const sortedCards = sortCards([...oldValue, newCard]);
 
-      return oldValue;
+      return canAddCard ? sortedCards : sortCards(oldValue);
     });
   };
 
@@ -271,11 +345,25 @@ export const WebProvider = ({ children }: iProviderProps) => {
 
     updateSuit((oldValue) => {
       const cardToRemove = getImportByName(name);
-      const cardValueToRemove = cardToRemove.split("/deck/")[1].split(".")[0];
+      let cardValueToRemove = "";
 
-      const countSpecificCard = oldValue.filter(
-        (value) => value.split("/deck/")[1].split(".")[0] === cardValueToRemove
-      ).length;
+      if (manipulationSplit(cardToRemove)) {
+        cardValueToRemove = manipulationSplit(cardToRemove);
+      } else {
+        return sortCards(oldValue);
+      }
+
+      let countSpecificCard = 0;
+
+      if (cardToRemove.startsWith("/assets/")) {
+        countSpecificCard = oldValue.filter(
+          (value) => manipulationSplit(value, "/assets/") === cardValueToRemove
+        ).length;
+      } else {
+        countSpecificCard = oldValue.filter(
+          (value) => manipulationSplit(value, "/deck/") === cardValueToRemove
+        ).length;
+      }
 
       if (countSpecificCard === 0) {
         return oldValue;
@@ -284,10 +372,23 @@ export const WebProvider = ({ children }: iProviderProps) => {
       const isAce = cardValueToRemove.endsWith("A");
 
       if ((isAce && countSpecificCard <= 2) || !isAce) {
-        const indexToRemove = oldValue.findIndex(
-          (value) =>
-            value.split("/deck/")[1].split(".")[0] === cardValueToRemove
-        );
+        let indexToRemove = 0;
+
+        if (cardToRemove.startsWith("/assets/")) {
+          indexToRemove = oldValue.findIndex(
+            (value) =>
+              manipulationSplit(value, "/assets/") === cardValueToRemove
+          );
+        } else {
+          indexToRemove = oldValue.findIndex(
+            (value) => manipulationSplit(value, "/deck/") === cardValueToRemove
+          );
+        }
+
+        if (countSpecificCard === 2) {
+          indexToRemove = oldValue.length - 1;
+        }
+
         if (indexToRemove > -1) {
           return [
             ...oldValue.slice(0, indexToRemove),
