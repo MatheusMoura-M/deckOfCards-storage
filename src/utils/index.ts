@@ -19,7 +19,7 @@ import ouros1 from "../assets/deck/ouros1.svg";
 import ouros2 from "../assets/deck/ouros2.svg";
 import ouros3 from "../assets/deck/ouros3.svg";
 import ouros4 from "../assets/deck/ouros4.svg";
-import ouros5 from "../assets/deck/ouros5.svg";
+import ouros5 from "../assets/deck/ouros5.png";
 import ouros6 from "../assets/deck/ouros6.svg";
 import ouros7 from "../assets/deck/ouros7.svg";
 import ouros8 from "../assets/deck/ouros8.svg";
@@ -31,7 +31,7 @@ import ourosK from "../assets/deck/ourosK.svg";
 import ourosA from "../assets/deck/ourosA.jpg";
 
 // Importação das cartas de Paus
-import paus1 from "../assets/deck/paus1.svg";
+import paus1 from "../assets/deck/paus1.png";
 import paus2 from "../assets/deck/paus2.svg";
 import paus3 from "../assets/deck/paus3.svg";
 import paus4 from "../assets/deck/paus4.svg";
@@ -48,7 +48,7 @@ import pausA from "../assets/deck/pausA.jpg";
 
 // Importação das cartas de Espadas
 import espadas1 from "../assets/deck/espadas1.svg";
-import espadas2 from "../assets/deck/espadas2.svg";
+import espadas2 from "../assets/deck/espadas2.png";
 import espadas3 from "../assets/deck/espadas3.svg";
 import espadas4 from "../assets/deck/espadas4.svg";
 import espadas5 from "../assets/deck/espadas5.svg";
