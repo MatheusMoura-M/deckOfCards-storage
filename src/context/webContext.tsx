@@ -245,16 +245,12 @@ export const WebProvider = ({ children }: iProviderProps) => {
           ).length;
         }
 
-        console.log(countJokers);
-
         if (countJokers < 4) {
           return [...oldValue, newCard];
         } else {
           return oldValue;
         }
       }
-
-      console.log("AAA");
 
       let countSpecificCard = 0;
 
@@ -268,7 +264,6 @@ export const WebProvider = ({ children }: iProviderProps) => {
         ).length;
       }
 
-      console.log("BBB");
       const canAddCard =
         countSpecificCard === 0 ||
         (newCardValue.endsWith("A") && countSpecificCard < 2);
@@ -287,11 +282,27 @@ export const WebProvider = ({ children }: iProviderProps) => {
 
     updateSuit((oldValue) => {
       const cardToRemove = getImportByName(name);
-      const cardValueToRemove = cardToRemove.split("/deck/")[1].split(".")[0];
+      let cardValueToRemove = "";
 
-      const countSpecificCard = oldValue.filter(
-        (value) => value.split("/deck/")[1].split(".")[0] === cardValueToRemove
-      ).length;
+      if (cardToRemove.startsWith("/assets/")) {
+        cardValueToRemove = cardToRemove.split("/assets/")[1].split("-")[0];
+      } else {
+        cardValueToRemove = cardToRemove.split("/deck/")[1].split(".")[0];
+      }
+
+      let countSpecificCard = 0;
+
+      if (cardValueToRemove.startsWith("/assets/")) {
+        countSpecificCard = oldValue.filter(
+          (value) =>
+            value.split("/assets/")[1].split("-")[0] === cardValueToRemove
+        ).length;
+      } else {
+        countSpecificCard = oldValue.filter(
+          (value) =>
+            value.split("/deck/")[1].split(".")[0] === cardValueToRemove
+        ).length;
+      }
 
       if (countSpecificCard === 0) {
         return oldValue;
@@ -300,10 +311,20 @@ export const WebProvider = ({ children }: iProviderProps) => {
       const isAce = cardValueToRemove.endsWith("A");
 
       if ((isAce && countSpecificCard <= 2) || !isAce) {
-        const indexToRemove = oldValue.findIndex(
-          (value) =>
-            value.split("/deck/")[1].split(".")[0] === cardValueToRemove
-        );
+        let indexToRemove = 0;
+
+        if (cardValueToRemove.startsWith("/assets/")) {
+          indexToRemove = oldValue.findIndex(
+            (value) =>
+              value.split("/assets/")[1].split("-")[0] === cardValueToRemove
+          );
+        } else {
+          indexToRemove = oldValue.findIndex(
+            (value) =>
+              value.split("/deck/")[1].split(".")[0] === cardValueToRemove
+          );
+        }
+
         if (indexToRemove > -1) {
           return [
             ...oldValue.slice(0, indexToRemove),
