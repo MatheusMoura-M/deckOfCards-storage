@@ -229,8 +229,10 @@ export const WebProvider = ({ children }: iProviderProps) => {
       console.log("AA - INCREASE", newCard);
       if (newCard.startsWith("/assets/")) {
         newCardValue = newCard.split("/assets/")[1].split("-")[0];
-      } else {
+      } else if (newCard.startsWith("/src/")) {
         newCardValue = newCard.split("/deck/")[1].split(".")[0];
+      } else {
+        return oldValue;
       }
 
       console.log("AA - INCREASE", newCardValue);
@@ -292,8 +294,10 @@ export const WebProvider = ({ children }: iProviderProps) => {
       console.log("AA - DECREASE", cardToRemove);
       if (cardToRemove.startsWith("/assets/")) {
         cardValueToRemove = cardToRemove.split("/assets/")[1].split("-")[0];
-      } else {
+      } else if (cardToRemove.startsWith("/src/")) {
         cardValueToRemove = cardToRemove.split("/deck/")[1].split(".")[0];
+      } else {
+        return oldValue;
       }
       console.log("AA - DECREASE", cardValueToRemove);
 
