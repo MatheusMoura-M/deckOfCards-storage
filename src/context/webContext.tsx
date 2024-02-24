@@ -226,11 +226,14 @@ export const WebProvider = ({ children }: iProviderProps) => {
       const newCard = getImportByName(name);
       let newCardValue = "";
 
+      console.log("AA - INCREASE", newCard);
       if (newCard.startsWith("/assets/")) {
         newCardValue = newCard.split("/assets/")[1].split("-")[0];
       } else {
         newCardValue = newCard.split("/deck/")[1].split(".")[0];
       }
+
+      console.log("AA - INCREASE", newCardValue);
 
       if (suit === "joker") {
         let countJokers = 0;
@@ -254,6 +257,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
 
       let countSpecificCard = 0;
 
+      console.log("BB - INCREASE");
       if (newCard.startsWith("/assets/")) {
         countSpecificCard = oldValue.filter(
           (value) => value.split("/assets/")[1].split("-")[0] === newCardValue
@@ -263,6 +267,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
           (value) => value.split("/deck/")[1].split(".")[0] === newCardValue
         ).length;
       }
+      console.log("BB - INCREASE", countSpecificCard);
 
       const canAddCard =
         countSpecificCard === 0 ||
@@ -284,17 +289,17 @@ export const WebProvider = ({ children }: iProviderProps) => {
       const cardToRemove = getImportByName(name);
       let cardValueToRemove = "";
 
-      console.log("AAA", cardToRemove);
+      console.log("AA - DECREASE", cardToRemove);
       if (cardToRemove.startsWith("/assets/")) {
         cardValueToRemove = cardToRemove.split("/assets/")[1].split("-")[0];
       } else {
         cardValueToRemove = cardToRemove.split("/deck/")[1].split(".")[0];
       }
-      console.log("AAA", cardValueToRemove);
+      console.log("AA - DECREASE", cardValueToRemove);
 
       let countSpecificCard = 0;
 
-      console.log("BBB", cardValueToRemove);
+      console.log("BB - DECREASE", cardValueToRemove);
       if (cardToRemove.startsWith("/assets/")) {
         countSpecificCard = oldValue.filter(
           (value) =>
@@ -307,7 +312,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
         ).length;
       }
 
-      console.log("BBB", countSpecificCard);
+      console.log("BB - DECREASE", countSpecificCard);
       if (countSpecificCard === 0) {
         return oldValue;
       }
@@ -317,7 +322,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
       if ((isAce && countSpecificCard <= 2) || !isAce) {
         let indexToRemove = 0;
 
-        console.log("CCC", cardValueToRemove);
+        console.log("CC - DECREASE", cardValueToRemove);
         if (cardToRemove.startsWith("/assets/")) {
           indexToRemove = oldValue.findIndex(
             (value) =>
@@ -329,7 +334,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
               value.split("/deck/")[1].split(".")[0] === cardValueToRemove
           );
         }
-        console.log("CCC", indexToRemove);
+        console.log("CC - DECREASE", indexToRemove);
 
         if (indexToRemove > -1) {
           return [
