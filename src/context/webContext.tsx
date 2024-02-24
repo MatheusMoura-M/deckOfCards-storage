@@ -221,7 +221,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
   const handleIncreaseCards = (name: string, suit: string) => {
     const updateSuit = suitHandler[suit];
     if (!updateSuit) return;
-    console.log("11", name);
+
     updateSuit((oldValue) => {
       const newCard = getImportByName(name);
       let newCardValue = "";
@@ -231,15 +231,19 @@ export const WebProvider = ({ children }: iProviderProps) => {
       } else {
         newCardValue = newCard.split("/deck/")[1].split(".")[0];
       }
-      console.log("Card :", newCardValue);
-      newCardValue.trim();
 
-      console.log("suit: ", suit);
-      console.log("suit: ", suit);
       if (suit === "joker") {
-        const countJokers = oldValue.filter(
-          (value) => value.split("/deck/")[1].split(".")[0] === "joker"
-        ).length;
+        let countJokers = 0;
+
+        if (newCard.startsWith("/assets/")) {
+          countJokers = oldValue.filter(
+            (value) => value.split("/assets/")[1].split("-")[0] === "joker"
+          ).length;
+        } else {
+          countJokers = oldValue.filter(
+            (value) => value.split("/deck/")[1].split(".")[0] === "joker"
+          ).length;
+        }
 
         console.log(countJokers);
 
@@ -249,11 +253,20 @@ export const WebProvider = ({ children }: iProviderProps) => {
           return oldValue;
         }
       }
+
       console.log("AAA");
 
-      const countSpecificCard = oldValue.filter(
-        (value) => value.split("/deck/")[1].split(".")[0] === newCardValue
-      ).length;
+      let countSpecificCard = 0;
+
+      if (newCard.startsWith("/assets/")) {
+        countSpecificCard = oldValue.filter(
+          (value) => value.split("/assets/")[1].split("-")[0] === newCardValue
+        ).length;
+      } else {
+        countSpecificCard = oldValue.filter(
+          (value) => value.split("/deck/")[1].split(".")[0] === newCardValue
+        ).length;
+      }
 
       console.log("BBB");
       const canAddCard =
