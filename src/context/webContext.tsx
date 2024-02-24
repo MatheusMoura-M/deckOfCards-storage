@@ -273,7 +273,6 @@ export const WebProvider = ({ children }: iProviderProps) => {
           ? value.split("/assets/")[1].split("-")[0]
           : value.split("/deck/")[1].split(".")[0];
 
-      console.log("AAA");
       return valueFormatted;
     } else {
       const valueFormatted = value.startsWith("/assets/")
@@ -298,8 +297,6 @@ export const WebProvider = ({ children }: iProviderProps) => {
       if (manipulationSplit(newCard)) {
         newCardValue = manipulationSplit(newCard);
       } else {
-        console.log("Entrou");
-
         return sortCards(oldValue);
       }
 
@@ -318,9 +315,7 @@ export const WebProvider = ({ children }: iProviderProps) => {
           ).length;
         }
 
-        const sortedCards = sortCards([...oldValue, newCard]);
-
-        return countJokers < 4 ? sortedCards : sortCards(oldValue);
+        return countJokers < 4 ? [...oldValue, newCard] : oldValue;
       }
 
       let countSpecificCard = 0;
